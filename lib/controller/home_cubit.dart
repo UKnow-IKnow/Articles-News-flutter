@@ -21,7 +21,7 @@ class HomeCubit extends Cubit<HomeState> {
       var connectivityResult = await (Connectivity().checkConnectivity());
       if (connectivityResult == ConnectivityResult.none) {
         await getDataFromDb();
-        getToast(context, "No Network");
+        getToast(context, "No Interner");
         return;
       }
 

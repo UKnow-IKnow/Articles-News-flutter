@@ -23,7 +23,7 @@ Widget NewsCard(BuildContext context, Articles article) {
               tag: article.url.toString(),
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.40,
-                width: MediaQuery.of(context).size.width * 100,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: FractionalOffset.topCenter,
