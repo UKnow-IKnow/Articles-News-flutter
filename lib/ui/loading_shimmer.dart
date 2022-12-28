@@ -1,4 +1,4 @@
-import 'package:articles_news/ui/common_ui.dart';
+import 'package:articles_news/ui/news.dart';
 import 'package:flutter/material.dart';
 
 class LoadingShimmer extends StatelessWidget {

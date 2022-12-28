@@ -87,14 +87,14 @@ class NewsDetails extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   myText(
-                                      size: 29,
+                                      size: 28,
                                       maxLine: 2,
                                       article.title.toString(),
                                       fontWeight: FontWeight.bold,
                                       color: white),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        bottom: 16, top: 64),
+                                        bottom: 16, top: 50),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -115,7 +115,7 @@ class NewsDetails extends StatelessWidget {
                                     ),
                                   ),
                                   myText(
-                                      size: 14,
+                                      size: 15,
                                       maxLine: 20,
                                       article.content.toString(),
                                       color: text2),

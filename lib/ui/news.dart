@@ -7,7 +7,7 @@ import 'package:shimmer/shimmer.dart';
 
 Widget NewsCard(BuildContext context, Articles article) {
   return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+    padding: const EdgeInsets.symmetric(vertical: 11, horizontal: 5),
     child: GestureDetector(
       onTap: () {
         teleportWithArguments(
@@ -23,7 +23,7 @@ Widget NewsCard(BuildContext context, Articles article) {
               tag: article.url.toString(),
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.40,
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width * 100,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: FractionalOffset.topCenter,
@@ -103,7 +103,7 @@ newsCardShimmer(BuildContext context) {
       enabled: true,
       child: Container(
           alignment: Alignment.center,
-          height: MediaQuery.of(context).size.height * 0.25,
+          height: MediaQuery.of(context).size.height * 0.40,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.3),
