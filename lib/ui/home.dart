@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:articles_news/controller/home_cubit.dart';
 import 'package:articles_news/model/home_state.dart';
+import 'package:articles_news/utils/c_data.dart';
 import 'package:articles_news/utils/common_function.dart';
 import 'package:articles_news/utils/constants.dart';
 import 'package:articles_news/ui/news.dart';
@@ -32,6 +35,8 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
 
+    loadCategory();
+
     context.read<HomeCubit>().getNews(context);
     scrollController.addListener(() async {
       if (scrollController.position.pixels ==
@@ -39,6 +44,13 @@ class _HomeState extends State<Home> {
         await context.read<HomeCubit>().getNextPageNews();
       }
     });
+  }
+
+  loadCategory() async {
+    final categoryJson =
+        await rootBundle.loadString("assets/files/category.JSON");
+    final decodeData = jsonDecode(categoryJson);
+    var categoryData = decodeData["categories"];
   }
 
   int currentPos = 0;
@@ -56,7 +68,7 @@ class _HomeState extends State<Home> {
           appBar: AppBar(
             backgroundColor: black,
             title: Text(
-              "HEADLINES",
+              "ArticlesNews",
               style: GoogleFonts.getFont("Roboto Slab",
                   letterSpacing: 4,
                   fontSize: 29,
